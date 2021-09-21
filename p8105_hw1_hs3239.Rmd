@@ -4,25 +4,24 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+
+Dframe1 = data.frame(rnorm(10))
+
+#create indicator and use True represent value larger than 0
+Dframe1$indicator[Dframe1$rnorm.10. > 0] = TRUE
+Dframe1$indicator[Dframe1$rnorm.10. < 0] = FALSE
+
+#build a character vector
+Dframe1$char = rep("char" , times = 10)
+
+#build a 10 factor with 3 levels 'a' 'b' 'c'
+Dframe1$factor = factor(c('a','b','c','a','b','c','a','b','c','a'))
+
+#try to calculate mean of each variable
+norMean = mean(Dframe1$rnorm.10.)
+logicMean = mean(Dframe1$indicator)
+charMean = mean(Dframe1$char)
+facMean = mean(Dframe1$factor)
+
 ```
 
-## R Markdown
-
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
-
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
-```
-
-## Including Plots
-
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
