@@ -20,16 +20,34 @@ Dframe1$factor = factor(c('a','b','c','a','b','c','a','b','c','a'))
 #try to calculate mean of each variable
 norMean = mean(Dframe1$rnorm.10.)
 logicMean = mean(Dframe1$indicator)
-#charMean = mean(Dframe1$char)
-#facMean = mean(Dframe1$factor)
+charMean = mean(Dframe1$char)
+facMean = mean(Dframe1$factor)
 #character and factor can not used to calculate mean
 
 # convert three types of variables to numeric variable
 # logical indicator and factor can be converted to numeric variables
 # charter variable can not because coercion
 logictonum = as.numeric(Dframe1$indicator)
-#chartonum = as.numeric(Dframe1$char)
+chartonum = as.numeric(Dframe1$char)
 factonum = as.numeric(Dframe1$factor)
 ```
 
 
+```{r  }
+library(ggplot2)
+data("penguins", package = "palmerpenguins")
+
+summary(penguins)
+
+
+
+p1= ggplot(penguins, aes(penguins$bill_length_mm,penguins$flipper_length_mm, color =penguins$species)) + geom_point()
+
+p1
+ ggsave("plot.png", plot = p1)
+```
+
+##The names of important variables: `r colnames(penguins)`
+##The column number of penguins is  `r ncol(penguins)`
+##The row number of penguins is  `r nrow(penguins)`
+##The mean fliper length is 200.9
