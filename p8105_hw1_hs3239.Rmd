@@ -2,8 +2,8 @@
 title: "Untitled"
 output: html_document
 ---
-
-```{r setup, include=FALSE}
+Section 1 
+```{r  }
 
 Dframe1 = data.frame(rnorm(10))
 
@@ -20,8 +20,16 @@ Dframe1$factor = factor(c('a','b','c','a','b','c','a','b','c','a'))
 #try to calculate mean of each variable
 norMean = mean(Dframe1$rnorm.10.)
 logicMean = mean(Dframe1$indicator)
-charMean = mean(Dframe1$char)
-facMean = mean(Dframe1$factor)
+#charMean = mean(Dframe1$char)
+#facMean = mean(Dframe1$factor)
+#character and factor can not used to calculate mean
 
+# convert three types of variables to numeric variable
+# logical indicator and factor can be converted to numeric variables
+# charter variable can not because coercion
+logictonum = as.numeric(Dframe1$indicator)
+#chartonum = as.numeric(Dframe1$char)
+factonum = as.numeric(Dframe1$factor)
 ```
+
 
